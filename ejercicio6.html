@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+    <button>Clasificar Arreglo</button> 
+    <ul id="par">
+        <strong>Pares</strong>
+    </ul>
+    <ul id="impar">
+        <strong>Impares</strong>
+    </ul>
+    <ul id="string">
+        <strong>Strings</strong>
+    </ul>
+    <script>
+        var arr = [1,'dos','tres',4,5,6,'siete',8,9,'diez'];
+        function isOdd(num) { return num % 2;}
+        arr.map(function sortList(x){
+          var item = document.createElement('li');
+          var contenido = document.createTextNode(x);
+          item.appendChild(contenido);
+          if (typeof x == 'number'){
+            if (isOdd(x)){
+              list = document.getElementById('impar');
+              list.appendChild(item);
+            } else {
+              list = document.getElementById('par');
+              list.appendChild(item);
+            }
+          } else {
+            list = document.getElementById('string');
+            list.appendChild(item);
+          }
+        });
+    </script>
+</body>
+</html>
